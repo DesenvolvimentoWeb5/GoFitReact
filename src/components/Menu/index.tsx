@@ -1,61 +1,87 @@
 import { useState } from "react";
 import levantador_de_peso from "../../assets/images/levantamento-de-peso.png"
-
+import { Link } from "react-router-dom";
 
 export function Menu() {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    let closeTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    const handleMouseEnter = () => {
+        if (closeTimeout) {
+            clearTimeout(closeTimeout);
+            closeTimeout = null;
+        }
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        closeTimeout = setTimeout(() => {
+            setIsHovered(false);
+        }, 300);
+    };
 
     return (
-        <div className="h-screen">
-            <nav className="flex justify-evenly items-center p-4 gap-2 bg-violet-500 rounded-md">
-
+        <div className="md:fixed top-0 w-full shadow z-50">
+            <nav className="flex flex-col md:flex-row justify-evenly items-center p-4 gap-2 bg-roxo_padrao rounded-md relative z-50">
                 <div className="flex justify-center items-center gap-2">
-                    <img src={levantador_de_peso} alt="Homem levantando peso" className="w-10 h-10" />
-                    <h1 className="text-gray-50 font-roboto text-4xl">GoFit</h1>
+                    <img
+                        src={levantador_de_peso}
+                        alt="Homem levantando peso"
+                        className="w-10 h-10"
+                    />
+                    <Link to="/home">
+                        <h1 className="text-gray-50 font-roboto text-4xl">GoFit</h1>
+                    </Link>
                 </div>
 
-                <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col gap-2 sm:flex-row relative">
+                    <Link to="/gym">
+                        <button className="rounded-full p-2 px-4 text-gray-50 font-roboto text-xl hover:bg-violet-700 transition-colors duration-300 ease-in-out">
+                            Academia
+                        </button>
+                    </Link>
 
-                    <button className="rounded-full p-2 text-gray-50 font-roboto text-xl hover:bg-violet-800">
-                        Academia
-                    </button>
+                    <div
+                        className="relative"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <Link to="/nutrition">
+                            <button className="rounded-full p-2 px-4 text-gray-50 font-roboto text-xl hover:bg-violet-700 transition-colors duration-300 ease-in-out">
+                                Nutrição
+                            </button>
+                        </Link>
 
-                    <button className="rounded-full p-2 text-gray-50 font-roboto text-xl hover:bg-violet-800" onClick={() => setIsOpen(!isOpen)}>
-                        Nutrição
-                        {/* <select className="text-gray-500">
-                            <option>Macro x Micro</option>
-                            <option>Macro x Micro</option>
-                            <option>Macro x Micro</option>
-                            <option>Macro x Micro</option>
-                            <option>Macro x Micro</option>
-                            <option>Macro x Micro</option>
-                        </select> */}
-                    </button>
-                    
-                    <button className="rounded-full p-2 text-gray-50 font-roboto text-xl hover:bg-violet-800">
-                        Calculadoras
-                    </button>
+                        {isHovered && (
+                            <ul
+                                className="absolute top-full left-0 w-28 bg-violet-600 rounded-3xl text-white shadow-lg p-2 z-50 space-y-2"
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Macro x Micro</li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Caloria</li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Info Nutricional</li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Dieta</li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Saude Mental</li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Fato x Mito</li>
+                            </ul>
+                        )}
+                    </div>
 
-                    <button className="rounded-full p-2 text-gray-50 font-roboto text-xl hover:bg-violet-800">
-                        Quem Somos
-                    </button>
-                    
+                    <Link to="/calculators">
+                        <button className="rounded-full p-2 px-4 text-gray-50 font-roboto text-xl hover:bg-violet-700 transition-colors duration-300 ease-in-out">
+                            Calculadoras
+                        </button>
+                    </Link>
+
+                    <Link to="/about">
+                        <button className="rounded-full p-2 px-4 text-gray-50 font-roboto text-xl hover:bg-violet-700 transition-colors duration-300 ease-in-out">
+                            Quem Somos
+                        </button>
+                    </Link>
                 </div>
-
             </nav>
-            {isOpen && (
-                <div className="bg-white shadow-lg top-full rounded-md">
-                    <ul>
-                        <li className="hover:bg-gray-100 px-4 py-2 cursor-pointer">Macro x Micro</li>
-                        <li className="hover:bg-gray-100 px-4 py-2 cursor-pointer">Caloria</li>
-                        <li className="hover:bg-gray-100 px-4 py-2 cursor-pointer">Info Nutricional</li>
-                        <li className="hover:bg-gray-100 px-4 py-2 cursor-pointer">Dieta</li>
-                        <li className="hover:bg-gray-100 px-4 py-2 cursor-pointer">Saúde Mental</li>
-                        <li className="hover:bg-gray-100 px-4 py-2 cursor-pointer">Fato x Mito</li>
-                    </ul>
-                </div>
-            )}
         </div>
     )
 }
