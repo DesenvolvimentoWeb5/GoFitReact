@@ -64,7 +64,7 @@ export function Home() {
                     </div>
                 </div>
             </section>
-            <footer className="flex justify-center bg-gray-300 p-8 items-center">
+            <footer className="flex justify-center bg-gray-300 p-8 items-center gap-1">
                 <p>© 2025 GoFit. All rights reserved.</p>
                 <p>Informações</p>
             </footer>

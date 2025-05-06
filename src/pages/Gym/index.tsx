@@ -11,6 +11,141 @@ import coqueteleira from "../../assets/images/coqueteleira.jpg"
 import { ArrowDownTrayIcon, CheckIcon } from '@heroicons/react/24/solid'
 
 export function Gym() {
+
+    type TrainingType = 'emagrecimento' | 'massa' | 'definicao';
+
+    interface TrainingProgram {
+        title: string;
+        content: string;
+    }
+
+    // Training data
+    const TRAINING_PROGRAMS: Record<TrainingType, TrainingProgram> = {
+        emagrecimento: {
+            title: 'Treino para Emagrecimento - 5x por Semana 💪',
+            content: `Segunda-feira:
+- HIIT (30 min)
+- Supino reto 3x12
+- Agachamento livre 3x15
+- Abdominais 3x20
+
+Terça-feira:
+- Corrida (40 min)
+- Levantamento terra 3x12
+- Rosca direta 3x12
+
+Quarta-feira:
+- Circuito funcional
+- Prancha 3x40s
+- Polichinelos 3x30
+
+Quinta-feira:
+- Bicicleta ergométrica (30 min)
+- Supino inclinado 3x12
+- Agachamento sumô 3x15
+- Abdominais infra 3x20
+
+Sexta-feira:
+- HIIT (30 min)
+- Desenvolvimento militar 3x12
+- Cadeira extensora 3x15
+- Prancha lateral 3x40s
+`
+        },
+        massa: {
+            title: 'Treino para Ganho de Massa - 5x por Semana 💪',
+            content: `Segunda-feira:
+- Supino reto 4x10
+- Desenvolvimento com halteres 4x10
+- Agachamento livre 4x10
+- Rosca direta 4x12
+- Abdominal infra 3x15
+
+Terça-feira:
+- Levantamento terra 4x8
+- Barra fixa 4x8
+- Remada curvada 4x10
+- Tríceps francês 4x12
+- Prancha 3x40s
+
+Quarta-feira:
+- Supino inclinado 4x10
+- Desenvolvimento militar 4x10
+- Cadeira extensora 4x12
+- Rosca martelo 4x12
+- Elevação de pernas 3x15
+
+Quinta-feira:
+- Stiff 4x8
+- Remada unilateral 4x10
+- Paralelas 4x12
+- Abdução de quadril 3x15
+- Prancha lateral 3x30s
+
+Sexta-feira:
+- Supino reto 4x10
+- Agachamento búlgaro 4x10
+- Pulley frente 4x12
+- Rosca concentrada 4x12
+- Abdominal supra 3x15
+`
+        },
+        definicao: {
+            title: 'Treino para Definição - 5x por Semana 💪',
+            content: `Segunda-feira:
+- HIIT (20 min)
+- Supino reto 3x12
+- Agachamento livre 3x12
+- Elevação lateral 3x15
+- Abdominais 3x20
+
+Terça-feira:
+- Corrida (30 min)
+- Barra fixa 3x10
+- Remada curvada 3x12
+- Tríceps corda 3x12
+- Prancha 3x40s
+
+Quarta-feira:
+- Circuito funcional
+- Afundo com halteres 3x12
+- Supino inclinado 3x12
+- Elevação de panturrilha 3x15
+- Abdominal infra 3x20
+
+Quinta-feira:
+- HIIT (20 min)
+- Levantamento terra 3x10
+- Desenvolvimento com halteres 3x12
+- Cadeira extensora 3x12
+- Prancha lateral 3x30s
+
+Sexta-feira:
+- Corrida (30 min)
+- Remada baixa 3x12
+- Paralelas 3x12
+- Abdução de quadril 3x15
+- Abdominal supra 3x20`
+        }
+    };
+
+    const downloadTrainingProgram = (tipo: TrainingType): void => {
+        const program = TRAINING_PROGRAMS[tipo];
+        if (!program) {
+            console.error('Tipo de treino inválido');
+            return;
+        }
+
+        const fullContent = `${program.title}\n\n${program.content}`;
+        const blob = new Blob([fullContent], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `Treino_${tipo}.txt`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div>
             <Menu />
@@ -27,19 +162,19 @@ export function Gym() {
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
                                 Descubra tudo que você precisa saber sobre nutrição
                             </h2>
-                            <button className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full"><ArrowDownTrayIcon className="w-6 h-6" /> Download do treino</button>
+                            <button className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full" onClick={() => downloadTrainingProgram('emagrecimento')}><ArrowDownTrayIcon className="w-6 h-6" /> Download do treino</button>
                         </div >
                         <div className="flex flex-col justify-center items-center shadow-2xl p-8 transform transition duration-300 hover:scale-105">
                             <img src={ganho} alt="Pesos de academia" className="rounded-full shadow-lg w-72 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg">Ganho de massa</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Explore tudo o que você precisa saber sobre o universo da academia.</h2>
-                            <button className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full"><ArrowDownTrayIcon className="w-6 h-6" /> Download do treino</button>
+                            <button className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full" onClick={() => downloadTrainingProgram('massa')}><ArrowDownTrayIcon className="w-6 h-6" /> Download do treino</button>
                         </div>
                         <div className="flex flex-col justify-center items-center shadow-2xl p-8 transform transition duration-300 hover:scale-105">
                             <img src={definicao} alt="Calculadora" className="rounded-r-full shadow-lg w-72 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg">Definição</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
-                            <button className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full"><ArrowDownTrayIcon className="w-6 h-6" /> Download do treino</button>
+                            <button className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full" onClick={() => downloadTrainingProgram('definicao')}><ArrowDownTrayIcon className="w-6 h-6" /> Download do treino</button>
                         </div>
                     </div>
                 </div>
@@ -52,43 +187,43 @@ export function Gym() {
                 </div>
                 <div className="flex justify-center items-center">
                     <div className="grid grid-col md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-2 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={strap} alt="Comida" className=" w-48 h-48 object-cover" />
-                            <h1 className="font-bold mt-4 text-lg">
-                                Emagrecimento
+                            <h1 className="font-bold mt-4 text-lg text-purple-900">
+                                Strap para Treino
                             </h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
                                 Descubra tudo que você precisa saber sobre nutrição
                             </h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div >
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-2 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={whey} alt="Pesos de academia" className="round  w-48 h-48 object-cover" />
-                            <h1 className="font-bold mt-4 text-lg">Ganho de massa</h1>
+                            <h1 className="font-bold mt-4 text-lg text-purple-900">Whey Protein</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Explore tudo o que você precisa saber sobre o universo da academia.</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-2 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={hipercalorico} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
-                            <h1 className="font-bold mt-4 text-lg">Definição</h1>
+                            <h1 className="font-bold mt-4 text-lg text-purple-900">Hipercalórico</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-2 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={pretreino} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
-                            <h1 className="font-bold mt-4 text-lg">Definição</h1>
+                            <h1 className="font-bold mt-4 text-lg text-purple-900">Pré-Treino</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-2 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={creatina} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
-                            <h1 className="font-bold mt-4 text-lg">Definição</h1>
+                            <h1 className="font-bold mt-4 text-lg text-purple-900">Creatina</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-2 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={coqueteleira} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
-                            <h1 className="font-bold mt-4 text-lg">Definição</h1>
+                            <h1 className="font-bold mt-4 text-lg text-purple-900">Coqueteleira</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
@@ -137,7 +272,7 @@ export function Gym() {
                 </div>
             </section >
 
-            <footer className="flex justify-center bg-gray-300 p-8 items-center">
+            <footer className="flex justify-center bg-gray-300 p-8 items-center gap-1">
                 <p>© 2025 GoFit. All rights reserved.</p>
                 <p>Informações</p>
             </footer>
