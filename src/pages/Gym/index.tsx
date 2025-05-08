@@ -1,4 +1,4 @@
-import { Menu } from "../../components/Menu";
+import { Menu } from "../../components/Menu"
 import emagrecimento from "../../assets/images/lose.jpg"
 import ganho from "../../assets/images/gain.jpg"
 import definicao from "../../assets/images/define.jpg"
@@ -19,7 +19,6 @@ export function Gym() {
         content: string;
     }
 
-    // Training data
     const TRAINING_PROGRAMS: Record<TrainingType, TrainingProgram> = {
         emagrecimento: {
             title: 'Treino para Emagrecimento - 5x por Semana 💪',

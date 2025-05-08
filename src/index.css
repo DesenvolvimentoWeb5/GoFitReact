@@ -17,3 +17,44 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+.calculator-container {
+  @apply bg-white p-6 rounded-lg shadow-md;
+}
+
+.calculator-title {
+  @apply text-2xl font-bold text-center;
+}
+
+.input-group {
+  @apply mb-4;
+}
+
+.input-group label {
+  @apply block mb-2 font-medium text-gray-700;
+}
+
+.input-group input,
+.input-group select {
+  @apply w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.calculator-button {
+  @apply w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors;
+}
+
+.result {
+  @apply mt-6 text-center;
+}
+
+.result-value {
+  @apply text-3xl font-bold text-blue-600;
+}
+
+.info-modal {
+  @apply bg-white p-6 rounded-lg max-w-md mx-auto;
+}
+
+.info-modal-backdrop {
+  @apply fixed inset-0 bg-black bg-opacity-50;
+}

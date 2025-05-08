@@ -21,8 +21,15 @@ export function Menu() {
         }, 300);
     };
 
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
     return (
-        <div className="md:fixed top-0 w-full shadow z-50">
+        <div className="md:fixed top-0 w-full shadow z-50 scrool-smooth">
             <nav className="flex flex-col md:flex-row justify-evenly items-center p-4 gap-2 bg-roxo_padrao rounded-md relative z-50">
                 <div className="flex justify-center items-center gap-2">
                     <img
@@ -59,14 +66,27 @@ export function Menu() {
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             >
-                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Macro x Micro</li>
-                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Caloria</li>
-                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Info Nutricional</li>
-                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Dieta</li>
-                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Saude Mental</li>
-                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">Fato x Mito</li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">
+                                    <a href="#macro-micro" className="block w-full h-full">Macro x Micro</a>
+                                </li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">
+                                    <a href="#caloria" className="block w-full h-full">Caloria</a>
+                                </li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">
+                                    <a href="#info-nutricional" className="block w-full h-full" onClick={() => scrollToSection('caloria')}>Info Nutricional</a>
+                                </li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">
+                                    <a href="#dieta" className="block w-full h-full">Dieta</a>
+                                </li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">
+                                    <a href="#saude-mental" className="block w-full h-full">Saude Mental</a>
+                                </li>
+                                <li className="hover:bg-violet-700 px-3 py-3 rounded-2xl cursor-pointer">
+                                    <a href="#fato-mito" className="block w-full h-full">Fato x Mito</a>
+                                </li>
                             </ul>
                         )}
+
                     </div>
 
                     <Link to="/calculators">
