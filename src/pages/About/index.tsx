@@ -28,6 +28,10 @@ export function About() {
                 <h2 className="flex text-lg text-gray-600 ml-10 mt-6 gap-2 mb-10"><CheckIcon className="w-6 h-6"/><strong>Empatia</strong>: Sabemos que cada jornada é única, e estamos aqui para apoiar cada passo.
                 </h2>
             </section>
+            <footer className="flex justify-center bg-gray-300 p-8 items-center gap-1">
+                <p>© 2025 GoFit. All rights reserved.</p>
+                <p>Informações</p>
+            </footer>
         </div>
     )
 }
