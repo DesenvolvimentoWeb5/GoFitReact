@@ -84,7 +84,7 @@ const MacronutrientCards: React.FC = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 max-w-4xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-14 md:gap-6 p-4 max-w-6xl">
       {cardsData.map((card, index) => (
         <MacronutrientCard key={index} {...card} />
       ))}

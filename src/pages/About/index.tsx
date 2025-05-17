@@ -19,13 +19,13 @@ export function About() {
                 <h2 className="flex text-lg text-gray-600 ml-10 mt-6">Ser a principal plataforma de referência em saúde e bem-estar, incentivando mudanças de hábitos para uma vida mais saudável e plena.</h2>
                 <div className="flex text-roxo_padrao text-3xl font-bold gap-4 mt-6 ml-10"><h1 className="text-4xl">|</h1><h1 className="text-roxo_padrao mt-2">Valores</h1>
                 </div>
-                <h2 className="flex text-lg text-gray-600 ml-10 mt-6 gap-2"><CheckIcon className="w-6 h-6"/><strong>Educação</strong>: Oferecer conhecimento acessível sobre nutrição e fitness.
+                <h2 className="flex text-lg text-gray-600 bg-slate-100 p-5 rounded-xl mx-10 mt-6 gap-2"><CheckIcon className="w-6 h-6"/><strong>Educação</strong>: Oferecer conhecimento acessível sobre nutrição e fitness.
                 </h2>
-                <h2 className="flex text-lg text-gray-600 ml-10 mt-6 gap-2"><CheckIcon className="w-6 h-6"/><strong>Qualidade</strong>: Trabalhamos com informações científicas e práticas testadas.
+                <h2 className="flex text-lg text-gray-600 bg-slate-100 p-5 rounded-xl mx-10 mt-6 gap-2"><CheckIcon className="w-6 h-6"/><strong>Qualidade</strong>: Trabalhamos com informações científicas e práticas testadas.
                 </h2>
-                <h2 className="flex text-lg text-gray-600 ml-10 mt-6 gap-2"><CheckIcon className="w-6 h-6"/><strong>Inovação</strong>: Buscamos sempre as melhores soluções tecnológicas para nossos usuários.
+                <h2 className="flex text-lg text-gray-600 bg-slate-100 p-5 rounded-xl mx-10 mt-6 gap-2"><CheckIcon className="w-6 h-6"/><strong>Inovação</strong>: Buscamos sempre as melhores soluções tecnológicas para nossos usuários.
                 </h2>
-                <h2 className="flex text-lg text-gray-600 ml-10 mt-6 gap-2 mb-10"><CheckIcon className="w-6 h-6"/><strong>Empatia</strong>: Sabemos que cada jornada é única, e estamos aqui para apoiar cada passo.
+                <h2 className="flex text-lg text-gray-600 bg-slate-100 p-5 rounded-xl mx-10 mt-6 gap-2 mb-10"><CheckIcon className="w-6 h-6"/><strong>Empatia</strong>: Sabemos que cada jornada é única, e estamos aqui para apoiar cada passo.
                 </h2>
             </section>
             <footer className="flex justify-center bg-gray-300 p-8 items-center gap-1">

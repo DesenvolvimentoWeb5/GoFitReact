@@ -186,7 +186,7 @@ Sexta-feira:
                 </div>
                 <div className="flex justify-center items-center">
                     <div className="grid grid-col md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={strap} alt="Comida" className=" w-48 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg text-purple-900">
                                 Strap para Treino
@@ -196,31 +196,31 @@ Sexta-feira:
                             </h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div >
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={whey} alt="Pesos de academia" className="round  w-48 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg text-purple-900">Whey Protein</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Explore tudo o que você precisa saber sobre o universo da academia.</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={hipercalorico} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg text-purple-900">Hipercalórico</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={pretreino} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg text-purple-900">Pré-Treino</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={creatina} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg text-purple-900">Creatina</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>
                             <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">Ver Produto</button>
                         </div>
-                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-32 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
+                        <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
                             <img src={coqueteleira} alt="Calculadora" className="rounded  w-48 h-48 object-cover" />
                             <h1 className="font-bold mt-4 text-lg text-purple-900">Coqueteleira</h1>
                             <h2 className="text-center text-gray-600 max-w-[300px] mt-4">Saiba tudo sobre calculadoras de IMC, gordura corporal e muito mais!</h2>

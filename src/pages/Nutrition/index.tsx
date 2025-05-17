@@ -11,7 +11,7 @@ export function Nutrition() {
         <div className="scroll-smooth">
             <Menu />
             <section className="min-h-screen">
-                <div className="flex flex-col gap-16 mt-48 sm:mr-24 sm:ml-24 md:mr-48 md:ml-48">
+                <div className="flex flex-col gap-16 mt-24 mx-16 sm:mx-24 md:mx-32">
                     <h1 className="text-4xl font-bold">O que é nutrição</h1>
                     <h2 className="text-2xl">Nutrição é a ciência que estuda os nutrientes presentes nos alimentos, bem como sua absorção pelo organismo humano e os efeitos que eles têm sobre a saúde e bem-estar tanto física, quanto mental.</h2>
                     <h2 className="text-2xl">Trata-se de uma área que desempenha um papel fundamental na saúde, uma vez que uma dieta equilibrada e adequada contribui diretamente para a prevenção de   doenças e promoção da qualidade de vida, além de desempenhar um papel importante na manutenção do equilíbrio emocional e na melhora da clareza mental.</h2>
@@ -19,7 +19,7 @@ export function Nutrition() {
                 </div>
             </section>
             <section id="macro-micro" className="min-h-screen bg-violet-300">
-                <div className="flex flex-col gap-16 sm:mr-24 sm:ml-24 md:mr-48 md:ml-48">
+                <div className="flex flex-col gap-16 mx-16 sm:mx-24 md:mx-32">
                     <h1 className="text-4xl font-bold mt-24">Macro x Micro</h1>
                     <h2 className="text-2xl">A nutrição é baseada na ingestão de dois tipos principais de nutrientes: macronutrientes e micronutrientes. Ambos são essenciais para o funcionamento do organismo, mas desempenham papéis diferentes e são necessários em quantidades distintas.</h2>
                     <h1 className="text-4xl font-bold">Macronutrientes</h1>
@@ -35,7 +35,7 @@ export function Nutrition() {
                 </div>
             </section>
             <section id="caloria" className="min-h-screen">
-                <div className="flex flex-col gap-16 sm:mr-24 sm:ml-24 md:mr-48 md:ml-48">
+                <div className="flex flex-col gap-16 mx-16 sm:mx-24 md:mx-32">
                     <h1 className="text-4xl font-bold mt-24">Caloria</h1>
                     <h2 className="text-2xl">A caloria (kcal) é a unidade de medida que representa a quantidade de energia que um alimento fornece ao organismo quando consumido e metabolizado. Essa energia é essencial para manter funções vitais, como a respiração, circulação sanguínea, funcionamento dos órgãos e realização de atividades físicas. Quando ingerimos alimentos, o corpo transforma os macronutrientes (carboidratos, proteínas e gorduras) em energia, medida em calorias.</h2>
                     <h2 className="text-2xl">A quantidade de calorias que o corpo gasta em repouso para manter funções básicas como respiração, circulação sanguínea e temperatura corporal chama-se Taxa Metabólica Basal (TMB). Calcule a sua TMB.</h2>
@@ -46,7 +46,7 @@ export function Nutrition() {
                 </div>
             </section>
             <section id="info-nutricional" className="min-h-screen bg-violet-300">
-                <div className="flex flex-col gap-16 sm:mr-24 sm:ml-24 md:mr-48 md:ml-48">
+                <div className="flex flex-col gap-16 mx-16 sm:mx-24 md:mx-32">
                     <h1 className="text-4xl font-bold mt-24">Como ler informações nutricionais</h1>
                     <h2 className="text-2xl">Nos rótulos dos alimentos contêm informações essenciais para entender o que você está consumindo. Saber interpretá-los pode te ajudar a fazer escolhas mais saudáveis e evitar ingredientes prejudiciais à saúde.</h2>
                     <h2 className="text-2xl">Ao lado está o exemplo do rótulo nutricional do Doritos.</h2>
@@ -72,8 +72,8 @@ export function Nutrition() {
                 </div>
             </section>
             <section id="dieta">
-                <div className="flex flex-col md:flex-row justify-center items-center mr-20">
-                    <div className="flex flex-col gap-16 sm:mr-12 sm:ml-12 md:mr-24 md:ml-24">
+                <div className="flex flex-col md:flex-row justify-center items-center mx-5 lg:mr-20">
+                    <div className="flex flex-col gap-16 mx-16 sm:mx-24 md:mx-32">
                         <h1 className="text-4xl font-bold mt-24">Dieta</h1>
                         <h2 className="text-2xl">A dieta é um termo usado para descrever o padrão de alimentação de um indivíduo ou de um grupo de pessoas. Refere-se aos tipos de alimentos e bebidas que uma pessoa consome regularmente para manter uma boa saúde, alcançar metas de perda de peso, ganhar massa muscular ou para tratar alguma condição de saúde específica. Alguns tipos de dieta são:</h2>
                         <h2 className="text-center text-xl rounded-lg p-2 bg-gradient-to-br from-roxo_padrao to-purple-500">Nutrição é a ciência dos alimentos, que contribui diretamente para a saúde fisica e mental.</h2>
@@ -89,7 +89,7 @@ export function Nutrition() {
                 </div>
             </section>
             <section id="saude-mental" className="bg-violet-300">
-                <div className="flex flex-col gap-16 sm:mr-24 sm:ml-24 md:mr-48 md:ml-48">
+                <div className="flex flex-col gap-16 mx-16 sm:mx-24 md:mx-32">
                     <h1 className="text-4xl font-bold mt-24">Nutrição X Saúde Mental</h1>
                     <h2 className="text-2xl">A nutrição é um fator crucial para a saúde mental, influenciando diretamente o funcionamento do cérebro e o bem-estar emocional. Uma dieta equilibrada, rica em alimentos como frutas, verduras, legumes, grãos integrais, proteínas magras e gorduras saudáveis, fornece nutrientes essenciais que ajudam a reduzir o risco de transtornos mentais, como depressão e ansiedade. Esses alimentos contribuem para a produção de neurotransmissores, como serotonina e dopamina, que regulam o humor e promovem a sensação de bem-estar.</h2>
                     <h2 className="text-2xl">Por outro lado, o consumo excessivo de alimentos ultraprocessados, ricos em açúcares e gorduras saturadas, está associado a um maior risco de problemas de saúde mental. Esses alimentos podem causar inflamações no organismo e prejudicar a microbiota intestinal, que tem uma conexão direta com o cérebro por meio do eixo intestino-cérebro. Uma microbiota saudável é fundamental para a produção de substâncias que influenciam positivamente o humor e a cognição.</h2>
@@ -110,7 +110,7 @@ export function Nutrition() {
                 </div>
             </section>
             <section id="fato-mito">
-                <div className="flex flex-col gap-16 sm:mr-24 sm:ml-24 md:mr-48 md:ml-48">
+                <div className="flex flex-col gap-16 mx-16 sm:mx-24 md:mx-32">
                     <h1 className="text-4xl font-bold mt-24">Fato ou Mito</h1>
                     <h2 className="text-2xl">A nutrição, assim como outras áreas do conhecimento, está cercada de mitos populares e informações que, muitas vezes, são passadas adiante sem embasamento científico. Esses equívocos podem levar a escolhas alimentares inadequadas e até prejudicar a saúde. Para ajudar a desvendar o que é verdade e o que é mito, preparamos este quiz com afirmações sobre nutrição. Será que você consegue identificar o que é real e o que é fake? Vamos testar seus conhecimentos!</h2>
                     <Quiz/>

@@ -17,7 +17,7 @@ type CalculatorType =
     | 'idealweight';
 
 export const Calculators: React.FC = () => {
-    
+
     const [selectedCalculator, setSelectedCalculator] = useState<CalculatorType | null>(null);
 
     const renderCalculator = () => {
@@ -47,7 +47,7 @@ export const Calculators: React.FC = () => {
     return (
         <div>
             <Menu />
-            <div className="min-h-screen bg-gray-50 mt-24">
+            <div className="min-h-screen bg-gray-50 mt-10 flex justify-center items-center">
                 <div className="container mx-auto px-4 py-8">
                     <CalculatorMenu onSelect={setSelectedCalculator} />
                     <div className="bg-white rounded-lg shadow-md p-6">
