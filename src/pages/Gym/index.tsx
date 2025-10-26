@@ -160,7 +160,7 @@ Sexta-feira:
         <div className="container mx-auto px-6">
           <div className="flex flex-col justify-center items-center text-center gap-8 mb-16">
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 💪 Treinos de Academia
               </h1>
             </div>
