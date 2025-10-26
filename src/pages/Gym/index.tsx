@@ -152,255 +152,260 @@ Sexta-feira:
   };
 
   return (
-    <div>
+    <div className="bg-gradient-to-b from-white via-purple-50 to-pink-50">
       <Menu onToggleMenu={handleToggleMenu} />
-      <section className="min-h-screen mt-[4.5rem] md:mt-24">
-        <div className="flex flex-col justify-center items-center text-center gap-8 mt-6">
-          <h1 className="text-roxo_padrao text-4xl font-bold">
-            Treinos de Academia
-          </h1>
-          <h2 className="text-lg text-gray-600">
-            Escolha o treino ideal para o seu objetivo e faça o download para
-            seguir o plano na academia.
-          </h2>
-          <div className="flex flex-col md:flex-row gap-12 mt-6 justify-center items-center">
-            <div className="flex flex-col justify-center items-center shadow-2xl p-8 transform transition duration-300 hover:scale-105">
-              <img
-                src={emagrecimento}
-                alt="Comida"
-                className="rounded-l-full shadow-lg w-72 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg">Emagrecimento</h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Descubra tudo que você precisa saber sobre nutrição
-              </h2>
-              <button
-                className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full"
-                onClick={() => downloadTrainingProgram("emagrecimento")}
-              >
-                <ArrowDownTrayIcon className="w-6 h-6" /> Download do treino
-              </button>
+
+      {/* Hero Section - Treinos */}
+      <section className="min-h-screen mt-[4.5rem] md:mt-24 py-16">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col justify-center items-center text-center gap-8 mb-16">
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
+                💪 Treinos de Academia
+              </h1>
             </div>
-            <div className="flex flex-col justify-center items-center shadow-2xl p-8 transform transition duration-300 hover:scale-105">
-              <img
-                src={ganho}
-                alt="Pesos de academia"
-                className="rounded-full shadow-lg w-72 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg">Ganho de massa</h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Explore tudo o que você precisa saber sobre o universo da
-                academia.
-              </h2>
-              <button
-                className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full"
-                onClick={() => downloadTrainingProgram("massa")}
-              >
-                <ArrowDownTrayIcon className="w-6 h-6" /> Download do treino
-              </button>
+            <p className="text-xl text-gray-700 max-w-3xl">
+              Escolha o treino ideal para o seu objetivo e faça o download para
+              seguir o plano na academia.
+            </p>
+          </div>
+
+          {/* Training Cards */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Emagrecimento */}
+            <div className="group flex flex-col bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-purple-300 border-4 border-transparent hover:border-orange-400">
+              <div className="relative overflow-hidden">
+                <img
+                  src={emagrecimento}
+                  alt="Emagrecimento"
+                  className="w-full h-64 object-cover rounded-t-2xl transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+                  🔥 Popular
+                </div>
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-orange-600 mb-3">
+                  Emagrecimento
+                </h3>
+                <p className="text-gray-600 mb-6 flex-grow">
+                  Treino intenso com foco em cardio e exercícios funcionais para
+                  acelerar a queima de gordura.
+                </p>
+                <button
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 flex items-center justify-center gap-3 transition-all duration-300 text-white font-semibold px-6 py-4 rounded-2xl shadow-lg transform hover:scale-105"
+                  onClick={() => downloadTrainingProgram("emagrecimento")}
+                >
+                  <ArrowDownTrayIcon className="w-6 h-6" />
+                  Download do Treino
+                </button>
+              </div>
             </div>
-            <div className="flex flex-col justify-center items-center shadow-2xl p-8 transform transition duration-300 hover:scale-105">
-              <img
-                src={definicao}
-                alt="Calculadora"
-                className="rounded-r-full shadow-lg w-72 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg">Definição</h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Saiba tudo sobre calculadoras de IMC, gordura corporal e muito
-                mais!
-              </h2>
-              <button
-                className="bg-roxo_padrao hover:bg-violet-700 flex gap-2 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-full"
-                onClick={() => downloadTrainingProgram("definicao")}
-              >
-                <ArrowDownTrayIcon className="w-6 h-6" /> Download do treino
-              </button>
+
+            {/* Ganho de Massa */}
+            <div className="group flex flex-col bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-blue-300 border-4 border-transparent hover:border-blue-400">
+              <div className="relative overflow-hidden">
+                <img
+                  src={ganho}
+                  alt="Ganho de massa"
+                  className="w-full h-64 object-cover rounded-t-2xl transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+                  💪 Intenso
+                </div>
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-blue-600 mb-3">
+                  Ganho de Massa
+                </h3>
+                <p className="text-gray-600 mb-6 flex-grow">
+                  Programa completo de hipertrofia com exercícios compostos para
+                  maximizar o crescimento muscular.
+                </p>
+                <button
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 flex items-center justify-center gap-3 transition-all duration-300 text-white font-semibold px-6 py-4 rounded-2xl shadow-lg transform hover:scale-105"
+                  onClick={() => downloadTrainingProgram("massa")}
+                >
+                  <ArrowDownTrayIcon className="w-6 h-6" />
+                  Download do Treino
+                </button>
+              </div>
+            </div>
+
+            {/* Definição */}
+            <div className="group flex flex-col bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-green-300 border-4 border-transparent hover:border-green-400">
+              <div className="relative overflow-hidden">
+                <img
+                  src={definicao}
+                  alt="Definição"
+                  className="w-full h-64 object-cover rounded-t-2xl transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+                  ⚡ Eficiente
+                </div>
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-green-600 mb-3">
+                  Definição Muscular
+                </h3>
+                <p className="text-gray-600 mb-6 flex-grow">
+                  Combine força e cardio para definir os músculos e reduzir o
+                  percentual de gordura corporal.
+                </p>
+                <button
+                  className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 flex items-center justify-center gap-3 transition-all duration-300 text-white font-semibold px-6 py-4 rounded-2xl shadow-lg transform hover:scale-105"
+                  onClick={() => downloadTrainingProgram("definicao")}
+                >
+                  <ArrowDownTrayIcon className="w-6 h-6" />
+                  Download do Treino
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="min-h-screen bg-gray-100 mt-10 pb-8">
-        <div className="flex flex-col justify-center items-center text-center gap-4">
-          <h1 className="text-purple-900 text-3xl font-bold mt-10">
-            Produtos que recomendamos
-          </h1>
-          <h2 className="text-gray-600">
-            Melhore sua performance com os melhores suplementos e acessórios!
-          </h2>
+      {/* Products Section */}
+      <section className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="space-y-4">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                🛒 Produtos Recomendados
+              </h2>
+            </div>
+            <p className="text-xl text-gray-700 mt-6">
+              Melhore sua performance com os melhores suplementos e acessórios!
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {[
+              {
+                img: strap,
+                name: "Strap para Treino",
+              },
+              { img: whey, name: "Whey Protein" },
+              {
+                img: hipercalorico,
+                name: "Hipercalórico",
+              },
+              {
+                img: pretreino,
+                name: "Pré-Treino",
+              },
+              { img: creatina, name: "Creatina" },
+              {
+                img: coqueteleira,
+                name: "Coqueteleira",
+              },
+            ].map((product, idx) => (
+              <div
+                key={idx}
+                className="group bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-300"
+              >
+                <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-6">
+                  <img
+                    src={product.img}
+                    alt={product.name}
+                    className="w-full h-56 object-contain transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {/* <div className="absolute top-4 left-4 text-4xl animate-bounce">
+                    {product.emoji}
+                  </div> */}
+                </div>
+                <div className="p-6">
+                  <h3 className={`text-2xl font-bold text-purple-700 mb-3`}>
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Produto de alta qualidade para melhorar seu desempenho e
+                    resultados na academia.
+                  </p>
+                  <button
+                    className={`w-full bg-purple-600 hover:bg-purple-700  transition-all duration-300 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transform`}
+                  >
+                    Ver Produto
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex justify-center items-center">
-          <div className="grid grid-col md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-            <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
-              <img
-                src={strap}
-                alt="Comida"
-                className=" w-48 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg text-purple-900">
-                Strap para Treino
-              </h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Descubra tudo que você precisa saber sobre nutrição
-              </h2>
-              <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">
-                Ver Produto
-              </button>
+      </section>
+
+      {/* Tips & Playlist Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+            {/* Tips Card */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl shadow-2xl p-10 border-4 border-purple-200 transform transition-all duration-500 hover:scale-105">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  💡 Dicas Essenciais
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {[
+                  "Hidrate-se sempre",
+                  "Mantenha uma alimentação balanceada",
+                  "Descanse bem",
+                  "Faça alongamentos",
+                  "Respeite seus limites e evolua gradualmente",
+                  "Faça o treino com foco na execução correta",
+                  "Inclua exercícios para todos os grupos musculares",
+                  "Use roupas e calçados adequados para treinar",
+                  "Mantenha a constância, os resultados vêm com o tempo",
+                ].map((tip, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-4 bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-x-2"
+                  >
+                    <div className="flex-shrink-0">
+                      <CheckIcon className="w-7 h-7 text-purple-600" />
+                    </div>
+                    <p className="text-gray-700 text-lg">{tip}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
-              <img
-                src={whey}
-                alt="Pesos de academia"
-                className="round  w-48 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg text-purple-900">
-                Whey Protein
-              </h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Explore tudo o que você precisa saber sobre o universo da
-                academia.
-              </h2>
-              <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">
-                Ver Produto
-              </button>
-            </div>
-            <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
-              <img
-                src={hipercalorico}
-                alt="Calculadora"
-                className="rounded  w-48 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg text-purple-900">
-                Hipercalórico
-              </h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Saiba tudo sobre calculadoras de IMC, gordura corporal e muito
-                mais!
-              </h2>
-              <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">
-                Ver Produto
-              </button>
-            </div>
-            <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
-              <img
-                src={pretreino}
-                alt="Calculadora"
-                className="rounded  w-48 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg text-purple-900">
-                Pré-Treino
-              </h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Saiba tudo sobre calculadoras de IMC, gordura corporal e muito
-                mais!
-              </h2>
-              <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">
-                Ver Produto
-              </button>
-            </div>
-            <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
-              <img
-                src={creatina}
-                alt="Calculadora"
-                className="rounded  w-48 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg text-purple-900">
-                Creatina
-              </h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Saiba tudo sobre calculadoras de IMC, gordura corporal e muito
-                mais!
-              </h2>
-              <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">
-                Ver Produto
-              </button>
-            </div>
-            <div className="flex flex-col justify-center items-center shadow-2xl rounded-xl p-4 mx-10 md:mx-4 lg:mx-4 bg-gray-50 transform transition duration-300 hover:-translate-y-2">
-              <img
-                src={coqueteleira}
-                alt="Calculadora"
-                className="rounded  w-48 h-48 object-cover"
-              />
-              <h1 className="font-bold mt-4 text-lg text-purple-900">
-                Coqueteleira
-              </h1>
-              <h2 className="text-center text-gray-600 max-w-[300px] mt-4">
-                Saiba tudo sobre calculadoras de IMC, gordura corporal e muito
-                mais!
-              </h2>
-              <button className="bg-purple-700 hover:bg-violet-800 transition-colors duration-300 ease-in-out text-gray-50 mt-4 px-6 py-2 rounded-xl">
-                Ver Produto
-              </button>
+
+            {/* Playlist Card */}
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl shadow-2xl p-10 border-4 border-orange-200 transform transition-all duration-500 hover:scale-105">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-2 h-16 bg-gradient-to-b from-orange-600 to-amber-600 rounded-full"></div>
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  🎵 Playlist para Treinar
+                </h2>
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <iframe
+                  src="https://open.spotify.com/embed/playlist/7DD7riEgqIZVWzlsd3aNn0?si=9dcdd902f6b44e9d"
+                  width="100%"
+                  height="520px"
+                  allow="encrypted-media"
+                  className="rounded-xl"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="m-8">
-        <div className="flex flex-col md:flex-row justify-evenly gap-4">
-          <div className="shadow-xl p-8 rounded-xl transform transition duration-300 hover:-translate-y-2">
-            <div className="flex items-center text-roxo_padrao text-3xl font-bold gap-4">
-              <h1 className="text-4xl">|</h1>
-              <h1 className="text-roxo_padrao mt-2">Dicas</h1>
-            </div>
-            <div className="flex flex-col gap-4 mt-5 text-gray-600">
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Hidrate-se sempre
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Mantenha uma alimentação balanceada
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Descanse bem
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Faça alongamentos
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Respeite seus limites e evolua gradualmente
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Faça o treino com foco na execução correta
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Inclua exercícios para todos os grupos musculares
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Use roupas e calçados adequados para treinar
-              </h2>
-              <h2 className="flex gap-2">
-                <CheckIcon className="w-6 h-6 text-roxo_padrao" />
-                Mantenha a constância, os resultados vêm com o tempo
-              </h2>
-            </div>
-          </div>
-          <div className="shadow-xl p-8 rounded-xl transform transition duration-300 hover:-translate-y-2">
-            <div className="flex items-center text-roxo_padrao text-3xl font-bold gap-4">
-              <h1 className="text-4xl">|</h1>
-              <h1 className="text-roxo_padrao mt-2">Playlist para treinar</h1>
-            </div>
-            <div className="mt-4 rounded-lg overflow-hidden">
-              <iframe
-                src={`https://open.spotify.com/embed/playlist/7DD7riEgqIZVWzlsd3aNn0?si=9dcdd902f6b44e9d`}
-                width="500px"
-                height="500px"
-                allow="encrypted-media"
-                className="rounded-lg"
-              ></iframe>
-            </div>
+      {/* Footer */}
+      {/* <footer className="bg-gradient-to-r from-purple-900 via-pink-900 to-blue-900 text-white py-12">
+        <div className="container mx-auto px-6 text-center">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+            <p className="text-lg font-medium">
+              © 2025 GoFit. All rights reserved.
+            </p>
+            <div className="w-2 h-2 bg-white rounded-full hidden md:block"></div>
+            <p className="text-lg hover:text-purple-300 transition-colors cursor-pointer font-medium">
+              Informações
+            </p>
           </div>
         </div>
-      </section>
-
+      </footer> */}
       <footer className="flex justify-center bg-gray-300 p-8 items-center gap-1">
         <p>© 2025 GoFit. All rights reserved.</p>
         <p>Informações</p>
