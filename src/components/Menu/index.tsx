@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
-// Placeholder para imagem
-const levantador_de_peso =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%23fff'/%3E%3C/svg%3E";
+import logo from "../../assets/images/GoFit Logo1.png";
 
 interface Menu {
   onToggleMenu: (isOpen: boolean) => void;
@@ -90,10 +87,10 @@ export function Menu({ onToggleMenu }: Menu) {
     <div>
       {isMobile ? (
         <div className="fixed top-0 w-full z-50">
-          <div className="flex justify-between items-center p-4 bg-purple-600">
+          <div className="flex justify-between items-center p-4 bg-roxo_menu">
             <div className="flex justify-center items-center gap-2">
               <img
-                src={levantador_de_peso}
+                src={logo}
                 alt="Homem levantando peso"
                 className="w-10 h-10"
               />
@@ -126,13 +123,13 @@ export function Menu({ onToggleMenu }: Menu) {
           </div>
 
           <div
-            className={`bg-purple-600 overflow-hidden transition-all duration-300 ease-in-out ${
+            className={`bg-roxo_menu overflow-hidden transition-all duration-300 ease-in-out ${
               isMenuOpen ? "max-h-screen" : "max-h-0"
             }`}
           >
             <div className="px-4 py-2 space-y-2">
               <Link to="/gym" onClick={handleMenuItemClick}>
-                <button className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300">
+                <button className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300">
                   Academia
                 </button>
               </Link>
@@ -141,7 +138,7 @@ export function Menu({ onToggleMenu }: Menu) {
               <div>
                 <button
                   onClick={toggleNutritionMenu}
-                  className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300 flex justify-between items-center"
+                  className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300 flex justify-between items-center"
                 >
                   Nutrição
                   <span
@@ -163,7 +160,7 @@ export function Menu({ onToggleMenu }: Menu) {
                     <Link to="/nutrition" onClick={handleMenuItemClick}>
                       <button
                         onClick={() => scrollToSection("macro-micro")}
-                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-purple-700 transition-colors"
+                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-roxo_menu_hover transition-colors"
                       >
                         Macro x Micro
                       </button>
@@ -171,7 +168,7 @@ export function Menu({ onToggleMenu }: Menu) {
                     <Link to="/nutrition" onClick={handleMenuItemClick}>
                       <button
                         onClick={() => scrollToSection("caloria")}
-                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-purple-700 transition-colors"
+                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-roxo_menu_hover transition-colors"
                       >
                         Caloria
                       </button>
@@ -179,7 +176,7 @@ export function Menu({ onToggleMenu }: Menu) {
                     <Link to="/nutrition" onClick={handleMenuItemClick}>
                       <button
                         onClick={() => scrollToSection("info-nutricional")}
-                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-purple-700 transition-colors"
+                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-roxo_menu_hover transition-colors"
                       >
                         Info Nutricional
                       </button>
@@ -187,7 +184,7 @@ export function Menu({ onToggleMenu }: Menu) {
                     <Link to="/nutrition" onClick={handleMenuItemClick}>
                       <button
                         onClick={() => scrollToSection("dieta")}
-                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-purple-700 transition-colors"
+                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-roxo_menu_hover transition-colors"
                       >
                         Dieta
                       </button>
@@ -195,7 +192,7 @@ export function Menu({ onToggleMenu }: Menu) {
                     <Link to="/nutrition" onClick={handleMenuItemClick}>
                       <button
                         onClick={() => scrollToSection("saude-mental")}
-                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-purple-700 transition-colors"
+                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-roxo_menu_hover transition-colors"
                       >
                         Saúde Mental
                       </button>
@@ -203,7 +200,7 @@ export function Menu({ onToggleMenu }: Menu) {
                     <Link to="/nutrition" onClick={handleMenuItemClick}>
                       <button
                         onClick={() => scrollToSection("fato-mito")}
-                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-purple-700 transition-colors"
+                        className="w-full text-left rounded-2xl p-3 px-4 text-gray-50 font-sans text-lg hover:bg-roxo_menu_hover transition-colors"
                       >
                         Fato x Mito
                       </button>
@@ -213,13 +210,13 @@ export function Menu({ onToggleMenu }: Menu) {
               </div>
 
               <Link to="/calculators" onClick={handleMenuItemClick}>
-                <button className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300">
+                <button className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300">
                   Calculadoras
                 </button>
               </Link>
 
               <Link to="/about" onClick={handleMenuItemClick}>
-                <button className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300">
+                <button className="w-full text-left rounded-full p-3 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300">
                   Quem Somos
                 </button>
               </Link>
@@ -229,21 +226,24 @@ export function Menu({ onToggleMenu }: Menu) {
       ) : (
         // Menu Desktop
         <div className="md:fixed top-0 w-full shadow z-50 scroll-smooth">
-          <nav className="flex flex-col md:flex-row justify-evenly items-center p-4 gap-2 bg-purple-600 rounded-md relative z-50">
+          <nav className="flex flex-col md:flex-row justify-evenly items-center p-4 gap-2 bg-roxo_menu rounded-md relative z-50">
             <div className="flex justify-center items-center gap-2">
-              <img
-                src={levantador_de_peso}
-                alt="Homem levantando peso"
-                className="w-10 h-10"
-              />
-              <Link to="/home">
+              <Link
+                to="/home"
+                className="flex justify-center items-center gap-2"
+              >
+                <img
+                  src={logo}
+                  alt="Homem levantando peso"
+                  className="w-10 h-10"
+                />
                 <h1 className="text-gray-50 font-sans text-4xl">GoFit</h1>
               </Link>
             </div>
 
             <div className="flex flex-col gap-2 sm:flex-row relative">
               <Link to="/gym">
-                <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300 ease-in-out">
+                <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300 ease-in-out">
                   Academia
                 </button>
               </Link>
@@ -254,19 +254,19 @@ export function Menu({ onToggleMenu }: Menu) {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link to="/nutrition">
-                  <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300 ease-in-out">
+                  <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300 ease-in-out">
                     Nutrição
                   </button>
                 </Link>
 
                 {isHovered && (
                   <ul
-                    className="absolute top-full left-0 w-28 bg-purple-500 rounded-3xl text-white shadow-lg p-2 z-50 space-y-2"
+                    className="absolute top-full left-0 w-28 bg-roxo_menu_hover rounded-3xl text-white shadow-lg p-2 z-50 space-y-2"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
                     <Link to={"/nutrition"}>
-                      <li className="hover:bg-purple-700 px-3 py-3 rounded-2xl cursor-pointer">
+                      <li className="bg-roxo_menu_hover hover:bg-roxo_menu px-3 py-3 rounded-2xl cursor-pointer">
                         <a
                           href="#macro-micro"
                           className="block w-full h-full"
@@ -275,7 +275,7 @@ export function Menu({ onToggleMenu }: Menu) {
                           Macro x Micro
                         </a>
                       </li>
-                      <li className="hover:bg-purple-700 px-3 py-3 rounded-2xl cursor-pointer">
+                      <li className="bg-roxo_menu_hover hover:bg-roxo_menu px-3 py-3 rounded-2xl cursor-pointer">
                         <a
                           href="#caloria"
                           className="block w-full h-full"
@@ -284,7 +284,7 @@ export function Menu({ onToggleMenu }: Menu) {
                           Caloria
                         </a>
                       </li>
-                      <li className="hover:bg-purple-700 px-3 py-3 rounded-2xl cursor-pointer">
+                      <li className="bg-roxo_menu_hover hover:bg-roxo_menu px-3 py-3 rounded-2xl cursor-pointer">
                         <a
                           href="#info-nutricional"
                           className="block w-full h-full"
@@ -293,7 +293,7 @@ export function Menu({ onToggleMenu }: Menu) {
                           Info Nutricional
                         </a>
                       </li>
-                      <li className="hover:bg-purple-700 px-3 py-3 rounded-2xl cursor-pointer">
+                      <li className="bg-roxo_menu_hover hover:bg-roxo_menu px-3 py-3 rounded-2xl cursor-pointer">
                         <a
                           href="#dieta"
                           className="block w-full h-full"
@@ -303,14 +303,14 @@ export function Menu({ onToggleMenu }: Menu) {
                         </a>
                       </li>
                       <li
-                        className="hover:bg-purple-700 px-3 py-3 rounded-2xl cursor-pointer"
+                        className="bg-roxo_menu_hover hover:bg-roxo_menu px-3 py-3 rounded-2xl cursor-pointer"
                         onClick={() => scrollToSection("saude-mental")}
                       >
                         <a href="#saude-mental" className="block w-full h-full">
                           Saúde Mental
                         </a>
                       </li>
-                      <li className="hover:bg-purple-700 px-3 py-3 rounded-2xl cursor-pointer">
+                      <li className="bg-roxo_menu_hover hover:bg-roxo_menu px-3 py-3 rounded-2xl cursor-pointer">
                         <a
                           href="#fato-mito"
                           className="block w-full h-full"
@@ -325,13 +325,13 @@ export function Menu({ onToggleMenu }: Menu) {
               </div>
 
               <Link to="/calculators">
-                <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300 ease-in-out">
+                <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300 ease-in-out">
                   Calculadoras
                 </button>
               </Link>
 
               <Link to="/about">
-                <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-purple-700 transition-colors duration-300 ease-in-out">
+                <button className="rounded-full p-2 px-4 text-gray-50 font-sans text-xl hover:bg-roxo_menu_hover transition-colors duration-300 ease-in-out">
                   Quem Somos
                 </button>
               </Link>

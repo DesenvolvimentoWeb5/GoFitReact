@@ -154,7 +154,7 @@ Sexta-feira:
   return (
     <div>
       <Menu onToggleMenu={handleToggleMenu} />
-      <section className="min-h-screen md:mt-24">
+      <section className="min-h-screen mt-[4.5rem] md:mt-24">
         <div className="flex flex-col justify-center items-center text-center gap-8 mt-6">
           <h1 className="text-roxo_padrao text-4xl font-bold">
             Treinos de Academia
