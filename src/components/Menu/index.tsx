@@ -6,7 +6,7 @@ const levantador_de_peso =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%23fff'/%3E%3C/svg%3E";
 
 interface Menu {
-  onToggleMenu: (isMenuOpen: boolean) => void;
+  onToggleMenu: (isOpen: boolean) => void;
 }
 
 function useIsMobile(breakpoint: number = 768): boolean {
