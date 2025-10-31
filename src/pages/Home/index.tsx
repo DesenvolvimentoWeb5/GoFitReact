@@ -17,21 +17,29 @@ export function Home() {
     <div>
       <Menu onToggleMenu={handleToggleMenu} />
       <div>
-        <section className="min-h-screen mt-[4.5rem] md:mt-[70px] bg-gradient-to-br from-roxo_padrao to-roxo-gradiente px-4">
-          <div className="flex flex-col md:flex-row justify-center items-center text-center gap-8">
-            <div className="flex flex-col text-center font-roboto">
-              <h1 className="text-6xl mb-4 font-bold">
-                Bem-vindo à <span className="text-gray-50">Gofit</span>!
-              </h1>
-              <p className="text-4xl font-bold">
-                O seu guia para saúde e fitness!
-              </p>
-              <p className="text-lg max-w-[500px] mt-5">
-                Seu recurso preferido para obter informações sobre nutrição e
-                inspiração para exercícios físicos
-              </p>
+        <section className="min-h-screen mt-[4.5rem] md:mt-[70px] bg-gradient-to-br from-roxo_padrao to-roxo-gradiente px-4 py-12 md:py-20">
+          <div className="container mx-auto max-w-7xl">
+            <div className="flex flex-col md:flex-row justify-center items-center text-center md:text-left gap-8 md:gap-12">
+              <div className="flex flex-col text-center md:text-left font-roboto flex-1 order-2 md:order-1">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-4 font-bold leading-tight">
+                  Bem-vindo à <span className="text-gray-50">Gofit</span>!
+                </h1>
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+                  O seu guia para saúde e fitness!
+                </p>
+                <p className="text-base sm:text-lg max-w-[500px] mt-3 mx-auto md:mx-0">
+                  Seu recurso preferido para obter informações sobre nutrição e
+                  inspiração para exercícios físicos
+                </p>
+              </div>
+              <div className="flex-1 w-full max-w-md md:max-w-lg order-1 md:order-2">
+                <img
+                  src={running}
+                  alt="Pessoas correndo"
+                  className="w-full h-auto object-contain drop-shadow-2xl rounded-2xl transform hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             </div>
-            <img src={running} alt="Pessoas correndo" />
           </div>
         </section>
         <section className="py-20 bg-gradient-to-b from-gray-50 to-purple-50">

@@ -4,6 +4,7 @@ import { Gym } from "../pages/Gym";
 import { Calculators } from "../pages/Calculators";
 import { Nutrition } from "../pages/Nutrition";
 import { About } from "../pages/About";
+import { Chatbot } from "../components/Chatbot";
 
 export function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export function AppRoutes() {
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Chatbot />
     </Router>
   );
 }
