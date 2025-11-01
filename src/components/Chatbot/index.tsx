@@ -1,8 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChatBubbleLeftRightIcon, XMarkIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid';
-import { ChatMessage } from './ChatMessage';
-import { sendMessageToAI } from '../../utils/chatService';
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ChatBubbleLeftRightIcon,
+  XMarkIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/24/solid";
+import { ChatMessage } from "./ChatMessage";
+import { sendMessageToAI } from "../../utils/chatService";
 
 interface Message {
   id: string;
@@ -15,19 +19,19 @@ export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
-      text: 'Olá! Sou o assistente virtual do GoFit. Posso te ajudar com informações sobre exercícios, nutrição, saúde e bem-estar. Como posso ajudar você hoje?',
+      id: "1",
+      text: "Olá! Sou o assistente virtual do GoFit. Posso te ajudar com informações sobre exercícios, nutrição, saúde e bem-estar. Como posso ajudar você hoje?",
       isUser: false,
       timestamp: new Date(),
     },
   ]);
-  const [inputMessage, setInputMessage] = useState('');
+  const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -41,7 +45,7 @@ export function Chatbot() {
   }, [isOpen]);
 
   const handleSendMessage = async () => {
-    if (inputMessage.trim() === '' || isLoading) return;
+    if (inputMessage.trim() === "" || isLoading) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -51,7 +55,7 @@ export function Chatbot() {
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    setInputMessage('');
+    setInputMessage("");
     setIsLoading(true);
 
     try {
@@ -66,24 +70,22 @@ export function Chatbot() {
 
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
-      let errorText = 'Desculpe, ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.';
+      let errorText =
+        "Desculpe, ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.";
 
       if (error instanceof Error) {
         const errorMsg = error.message;
 
-        if (errorMsg.includes('CONFIG_ERROR')) {
-          errorText = '⚠️ Configuração necessária!\n\n' +
-            '1. Obtenha uma API key gratuita em:\n' +
-            'https://makersuite.google.com/app/apikey\n\n' +
-            '2. Crie um arquivo ".env" na raiz do projeto\n\n' +
-            '3. Adicione: VITE_GEMINI_API_KEY=sua_chave_aqui\n\n' +
-            '4. Reinicie o servidor (npm run dev)';
-        } else if (errorMsg.includes('API_ERROR')) {
-          errorText = '❌ ' + errorMsg.replace('API_ERROR: ', '');
-        } else if (errorMsg.includes('RATE_LIMIT')) {
-          errorText = '⏱️ Você atingiu o limite de requisições. Aguarde alguns minutos e tente novamente.';
-        } else if (errorMsg.includes('RESPONSE_ERROR')) {
-          errorText = '⚠️ A resposta da IA está em formato inesperado. Tente novamente em alguns instantes.';
+        if (errorMsg.includes("CONFIG_ERROR")) {
+          errorText = "Erro interno! Entre em contato com o suporte.";
+        } else if (errorMsg.includes("API_ERROR")) {
+          errorText = "❌ " + errorMsg.replace("API_ERROR: ", "");
+        } else if (errorMsg.includes("RATE_LIMIT")) {
+          errorText =
+            "⏱️ Você atingiu o limite de requisições. Aguarde alguns minutos e tente novamente.";
+        } else if (errorMsg.includes("RESPONSE_ERROR")) {
+          errorText =
+            "⚠️ A resposta da IA está em formato inesperado. Tente novamente em alguns instantes.";
         }
       }
 
@@ -100,7 +102,7 @@ export function Chatbot() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
@@ -171,9 +173,18 @@ export function Chatbot() {
                 <div className="flex justify-start mb-4">
                   <div className="bg-gray-100 rounded-2xl px-4 py-3 border border-gray-200">
                     <div className="flex space-x-2">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                      <div
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "0ms" }}
+                      ></div>
+                      <div
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "150ms" }}
+                      ></div>
+                      <div
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "300ms" }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -196,7 +207,7 @@ export function Chatbot() {
                 />
                 <button
                   onClick={handleSendMessage}
-                  disabled={isLoading || inputMessage.trim() === ''}
+                  disabled={isLoading || inputMessage.trim() === ""}
                   className="p-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full hover:shadow-lg transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="Enviar mensagem"
                 >
